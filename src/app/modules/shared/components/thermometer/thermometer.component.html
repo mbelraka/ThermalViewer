@@ -1,0 +1,19 @@
+<div
+  *ngIf="valid"
+  class="full-container"
+  fxLayout="column"
+  fxLayoutAlign="start start"
+>
+  <div class="shape" fxLayoutAlign="center center">
+    <div class="circle"></div>
+    <div class="line minimum"></div>
+    <div class="line maximum"></div>
+    <div id="indicator" class="line indicator"></div>
+  </div>
+  <span class="value minimum">{{ minimumTemparature }}</span>
+  <span class="value maximum">{{ maximumTemparature }}</span>
+  <span class="value current">{{ currentTemparature }}°C</span>
+</div>
+<ng-container *ngIf="!valid">
+  <span class="invalid-label">Invalid Inputs</span>
+</ng-container>

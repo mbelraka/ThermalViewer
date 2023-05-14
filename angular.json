@@ -32,6 +32,14 @@
             "styles": [
               "src/styles.scss"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src/app",
+                "src/app/styles",
+                "src/app/styles/shared",
+                "node_modules"
+              ]
+            },
             "scripts": []
           },
           "configurations": {

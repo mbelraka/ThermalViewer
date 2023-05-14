@@ -1,1 +1,66 @@
-<p>main works!</p>
+<div class="full-container" fxlayout="column" fxLayoutAlign="center start">
+  <div class="body" fxFlex="1 1 0" fxLayout="column">
+    <div class="toolbar" fxLayout="row" fxLayoutAlign="start center">
+      Thermal Viewer
+    </div>
+    <div class="main-content" fxLayout="column" fxLayoutGap="60px">
+      <div class="upper-inputs" fxLayout="column" fxLayoutGap="32px">
+        <span class="title"> Inputs </span>
+        <div
+          class="content"
+          fxlayout="row"
+          fxLayoutAlign="start center"
+          fxLayoutGap="80px"
+          [formGroup]="form"
+        >
+          <mat-form-field appearance="outline">
+            <mat-label>Minimum Temperature</mat-label>
+            <input
+              matInput
+              placeholder="0"
+              formControlName="minimumTemperature"
+            />
+            <span class="material-symbols-outlined" matSuffix>
+              thermometer_loss
+            </span>
+            <mat-error *ngIf="form.get('minimumTemperature').invalid">{{
+              ERRORS.InvalidInput
+            }}</mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Current Temperature</mat-label>
+            <input
+              matInput
+              placeholder="0"
+              formControlName="currentTemperature"
+            />
+            <span class="material-symbols-outlined" matSuffix>
+              thermometer
+            </span>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Maximum Temperature</mat-label>
+            <input
+              matInput
+              placeholder="0"
+              formControlName="maximumTemperature"
+            />
+            <span class="material-symbols-outlined" matSuffix>
+              thermometer_gain
+            </span>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="outputs" fxLayout="column" fxLayoutGap="32px">
+        <span class="title"> Outputs </span>
+        <app-thermometer
+          [minimumTemparature]="minimumTemperature"
+          [currentTemparature]="currentTemperature"
+          [maximumTemparature]="maximumTemperature"
+        ></app-thermometer>
+      </div>
+    </div>
+  </div>
+</div>

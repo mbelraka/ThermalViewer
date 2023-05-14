@@ -8,7 +8,7 @@ describe('ThermometerComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [ThermometerComponent]
+      declarations: [ThermometerComponent]
     });
     fixture = TestBed.createComponent(ThermometerComponent);
     component = fixture.componentInstance;

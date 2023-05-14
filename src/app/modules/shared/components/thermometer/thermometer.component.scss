@@ -1,0 +1,67 @@
+.full-container {
+  display: inline-block;
+  padding: 2rem;
+  position: relative;
+
+  .shape {
+    display: inline-block;
+    position: relative;
+
+    .circle {
+      width: 80px;
+      aspect-ratio: 1 / 1;
+      border: 1px solid black;
+      border-radius: 50%;
+    }
+
+    .line {
+      position: absolute;
+      left: 0;
+      bottom: 8px;
+      background-color: black;
+      height: 2px;
+      width: 12px;
+      transform: rotateZ(-45deg);
+
+      &.maximum {
+        transform: rotateZ(45deg) !important;
+        right: 0;
+        left: unset;
+      }
+
+      &.indicator {
+        position: absolute;
+        top: calc(50% - 1px);
+        left: calc(50% - 1px);
+        transform-origin: top left;
+        width: 40px;
+        transform: rotateZ(-225deg);
+      }
+    }
+  }
+
+  .value {
+    position: absolute;
+    bottom: 16px;
+
+    &.minimum {
+      left: 12px;
+    }
+
+    &.maximum {
+      left: 108px;
+    }
+
+    &.current {
+      color: #0090f5;
+      left: 48px;
+      bottom: -24px;
+      font-size: 1.5rem;
+      font-weight: 500;
+    }
+  }
+}
+
+.invalid-label {
+  color: red;
+}
